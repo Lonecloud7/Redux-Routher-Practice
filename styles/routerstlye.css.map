@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC,GAAG,CAAC,EAAE,CAAA;EACP,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;CAM1B;;AARD,AAGQ,IAHJ,CAAC,GAAG,CAAC,EAAE,CAGH,EAAE,CAAA;EACE,WAAW,EAAC,IAAK;EACjB,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,GAAG;CACb",
+    "sources": [
+        "routerstlye.scss"
+    ],
+    "names": [],
+    "file": "routerstlye.css"
+}

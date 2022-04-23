@@ -1,0 +1,15 @@
+.nav nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav nav ul h2 {
+  margin-left: 50px;
+  list-style: none;
+  color: red;
+}
+/*# sourceMappingURL=routerstlye.css.map */
