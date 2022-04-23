@@ -10,6 +10,16 @@ const reducer1 = (state = 0, action) => {
     }
 }
 
+const reducer2 = (state = "", action) => {
+    switch(action.type){
+        case "value":
+            return state = action.payload
+        default:
+            return state;
+    }
+}
+
 export {
     reducer1,
+    reducer2,
 }

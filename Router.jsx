@@ -19,13 +19,13 @@ const RouterApp = () => {
     const [statethree, setStatethree] = useState("");
     const [link, setLink] = useState(true)
 
-    const accounts = useSelector((state) => state.accounts);
+    const accounts = useSelector((state) => state);
 
     const dispatch = useDispatch();
 
     const {Withdraw, Deposit} = bindActionCreators(actionCreators, dispatch);
 
-    console.log(accounts);
+
 
   return (
     <div>

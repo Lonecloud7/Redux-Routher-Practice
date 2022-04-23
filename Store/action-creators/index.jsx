@@ -15,3 +15,12 @@ export const Withdraw = (amount) => {
         })
     }
 }
+
+export const inputValue = (input) => {
+    return (dispatch) => {
+        dispatch({
+            type:"value",
+            payload:input
+        })
+    }
+}
