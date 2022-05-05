@@ -1,9 +1,29 @@
-.nav nav ul{
-    display: flex;
-    justify-content: center;
-        h2{
-            margin-left:50px ;
-            list-style: none;
-            color: red;
-        }
+.nav nav ul {
+  display: flex;
+  justify-content: center;
+  h2 {
+    margin-left: 50px;
+    list-style: none;
+    color: red;
+  }
+}
+
+.news-show {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+   
+  nav {
+   
+    h2 {
+      width: 300px;
+    }
+    img {
+      width: 400px;
+      height: 200px;
+    }
+    p {
+      width: 250px;
+      text-align: center;
+    }
+  }
 }

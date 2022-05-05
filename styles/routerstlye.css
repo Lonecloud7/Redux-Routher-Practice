@@ -12,4 +12,25 @@
   list-style: none;
   color: red;
 }
+
+.news-show {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.news-show nav h2 {
+  width: 300px;
+}
+
+.news-show nav img {
+  width: 400px;
+  height: 200px;
+}
+
+.news-show nav p {
+  width: 250px;
+  text-align: center;
+}
 /*# sourceMappingURL=routerstlye.css.map */

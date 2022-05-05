@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react"
 
 const reducer1 = (state = 0, action) => {
     switch(action.type){
@@ -19,7 +20,17 @@ const reducer2 = (state = "", action) => {
     }
 }
 
+const newsStore = (state = {}, action) => {
+    switch(action.type){
+        case "search-keyword":
+            return state = action.payload
+        default:
+            return state;
+    }
+}
+
 export {
     reducer1,
     reducer2,
+    newsStore,
 }

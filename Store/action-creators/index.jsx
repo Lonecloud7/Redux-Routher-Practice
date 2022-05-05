@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react"
+
 export const Deposit = (amount) => {
     return (dispatch) => {
         dispatch({
@@ -21,6 +23,17 @@ export const inputValue = (input) => {
         dispatch({
             type:"value",
             payload:input
+        })
+    }
+}
+
+export const searchNews = (keyword) => {
+
+
+    return (dispatch) => {
+        dispatch({
+            type:"search-keyword",
+            payload:keyword
         })
     }
 }
