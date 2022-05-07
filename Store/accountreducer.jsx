@@ -20,10 +20,12 @@ const reducer2 = (state = "", action) => {
     }
 }
 
-const newsStore = (state = {}, action) => {
+const initialState = {}
+
+const newsStore = (state = initialState, action) => {
     switch(action.type){
         case "search-keyword":
-            return state = action.payload
+            return {...action.payload}
         default:
             return state;
     }
