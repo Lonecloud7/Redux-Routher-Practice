@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { actionCreators } from "../Store/index";
 import { bindActionCreators } from "redux";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 const Home = () => {
 
@@ -14,16 +16,16 @@ const Home = () => {
         <div className="home" style={{textAlign:"center"}}>
             <h1>HOME</h1>
             <h2>STATE 1:{state1}</h2>
-            <button onClick={() =>{
+            <Button onClick={() =>{
                 Deposit(300);
             }}>
                 add it up
-            </button>
-            <button onClick={() =>{
+            </Button>
+            <Button onClick={() =>{
                 Withdraw(300);
             }}>
                 take it down
-            </button>
+            </Button>
         </div>
     )
 }

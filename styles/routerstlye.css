@@ -1,3 +1,12 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #66B2FF;
+}
+
+.router {
+  color: white;
+}
+
 .nav nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9,8 +18,10 @@
 
 .nav nav ul h2 {
   margin-left: 50px;
-  list-style: none;
-  color: red;
+}
+
+.nav nav ul h2 a {
+  text-decoration: none;
 }
 
 .news-show {

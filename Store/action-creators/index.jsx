@@ -1,4 +1,11 @@
 import { useState, useEffect } from "react";
+// import { useDispatch } from "react-redux";
+// import { actionCreators } from "../index";
+// import { bindActionCreators } from "redux";
+
+// // const dispatch = useDispatch();
+
+//   const { } = bindActionCreators(actionCreators, dispatch);
 
 export const Deposit = (amount) => {
   return (dispatch) => {
@@ -27,7 +34,26 @@ export const inputValue = (input) => {
   };
 };
 
+export const startLoad = () => {
+  return (dispatch) => {
+    dispatch({
+      type: "start-load",
+      payload: true,
+    })
+  }
+}
+
+export const stopLoad = () => {
+  return (dispatch) => {
+    dispatch({
+      type: "end-load",
+      payload: false,
+    })
+  }
+}
+
 export const searchNews = (keyword) => {
+  startLoad()
   const key = "aec9ac0f87f04b9686f66beb5ec8d954";
   var url = `https://newsapi.org/v2/everything?q=${keyword}&from=2022-05-07&sortBy=popularity&apiKey=${key}`;
 
@@ -39,6 +65,7 @@ export const searchNews = (keyword) => {
         type: "search-keyword",
         payload: data,
       });
+      stopLoad()
     } catch (err) {
       console.log(err);
     }

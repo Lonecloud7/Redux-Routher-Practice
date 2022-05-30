@@ -1,10 +1,23 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #66B2FF;
+}
+
+.router{
+  color: white;
+}
+
+
+
 .nav nav ul {
   display: flex;
   justify-content: center;
   h2 {
+    a{
+      text-decoration: none;
+    }
     margin-left: 50px;
-    list-style: none;
-    color: red;
+    
   }
 }
 

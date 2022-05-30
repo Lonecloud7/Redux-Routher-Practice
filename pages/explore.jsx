@@ -4,30 +4,34 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { actionCreators } from "../Store";
 import { bindActionCreators } from "redux";
+import TextField from '@mui/material/TextField';
+import { Button } from "@mui/material";
 
 const Explore = () => {
   const Navigate = useNavigate();
   const { linkAddOn } = useParams();
 
   const [keyword, setKeyword] = useState("");
-  const [pageView, setPageView] = useState(6);
+  const [pageView, setPageView] = useState(0);
+  // const [load, setLoad] = useState(false)
 
   const newNews = useSelector((state) => state.news);
+  const load = useSelector((state) => state.loadState);
 
   const dispatch = useDispatch();
 
   const { searchNews } = bindActionCreators(actionCreators, dispatch);
 
   useEffect(() => {
-    console.log(newNews);
+    
   }, [newNews]);
 
-  const getNews = (e) => {
+  const getNews = () => {
     if (keyword != "") {
       searchNews(keyword);
     }
     setKeyword("");
-    setPageView(6)
+    setPageView(6);
   };
 
   return (
@@ -35,18 +39,21 @@ const Explore = () => {
       <h1>EXPLORE</h1>
 
       <h2>WE ARE {linkAddOn}</h2>
-      <button
+      <Button
         onClick={() => {
           Navigate("/about");
         }}
+        variant="outlined"
       >
         ABOUT US
-      </button>
+      </Button>
 
       <h2>Find out more</h2>
       <form action="">
-        <input
-          type="text"
+        <TextField
+          label="Find News"
+          type="search"
+          variant="outlined"
           placeholder="search here"
           value={keyword}
           onChange={(e) => {
@@ -54,19 +61,21 @@ const Explore = () => {
           }}
         />
       </form>
+      <br />
 
-      <button
+      <Button
         onClick={() => {
           getNews();
         }}
+        variant="outlined"
       >
-        FETCH!
-      </button>
+        FETCH
+      </Button>
 
       <br />
 
       <div className="news-show">
-        {newNews.articles ? (
+        {newNews.articles && (
           newNews.articles.slice(0, pageView).map((value, index) => {
             const { title, content, urlToImage, url } = value;
 
@@ -80,18 +89,31 @@ const Explore = () => {
               </nav>
             );
           })
-        ) : (
-          <h1> LOADING</h1>
         )}
       </div>
 
-      {newNews.articles && <button
-                  onClick={() => {
-                    setPageView(3 + pageView)
-                  }}
-                >
-                View more
-                </button>}
+      {load && <h1> LOADING</h1>}
+          
+      
+
+      {newNews.articles && (
+        <Button
+          onClick={() => {
+            setPageView(3 + pageView);
+          }}
+        >
+          View more
+        </Button>
+      )}
+      {newNews.articles && (
+        <Button
+          onClick={() => {
+            setPageView(pageView - 3);
+          }}
+        >
+          View less
+        </Button>
+      )}
     </div>
   );
 };

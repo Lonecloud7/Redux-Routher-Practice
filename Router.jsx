@@ -12,11 +12,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "./Store/index";
 
+
+
 const RouterApp = () => {
 
-    const [stateone, setStateone] = useState("");
-    const [statetwo, setStatetwo] = useState("");
-    const [statethree, setStatethree] = useState("");
+
     const [link, setLink] = useState(true)
 
     const accounts = useSelector((state) => state);
@@ -28,7 +28,7 @@ const RouterApp = () => {
 
 
   return (
-    <div>
+    <div className={"router"}>
       <h1 style={{ textAlign: "center" }}>ROUTER PRACTICE</h1>
       <Nav />
       <Routes>
