@@ -29,7 +29,7 @@ const Explore = () => {
   const getNews = (e) => {
 
     e.preventDefault();
-    
+
     if (keyword != "") {
       searchNews(keyword);
     }
@@ -67,9 +67,7 @@ const Explore = () => {
       <br />
 
       <Button
-        onClick={() => {
-          getNews();
-        }}
+        onClick={getNews}
         variant="outlined"
       >
         FETCH
