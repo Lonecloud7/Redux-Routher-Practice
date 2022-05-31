@@ -26,7 +26,10 @@ const Explore = () => {
     
   }, [newNews]);
 
-  const getNews = () => {
+  const getNews = (e) => {
+
+    e.preventDefault();
+    
     if (keyword != "") {
       searchNews(keyword);
     }
@@ -49,7 +52,7 @@ const Explore = () => {
       </Button>
 
       <h2>Find out more</h2>
-      <form action="">
+      <form onSubmit={getNews}>
         <TextField
           label="Find News"
           type="search"

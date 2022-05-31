@@ -29,7 +29,7 @@ const RouterApp = () => {
 
   return (
     <div className={"router"}>
-      <h1 style={{ textAlign: "center" }}>ROUTER PRACTICE</h1>
+      <h1 style={{ textAlign: "center" }}>ROUTER/REDUX PRACTICE</h1>
       <Nav />
       <Routes>
         <Route exact path="/" element={<Home />} />

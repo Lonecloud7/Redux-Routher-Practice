@@ -43,4 +43,19 @@ const loading = (state = false, action) => {
   }
 };
 
-export { reducer1, reducer2, newsStore,loading };
+
+
+const Array = (state = [], action) => {
+  switch(action.type){
+    case "insert":
+      return [...state, action.payload];
+    case "delete":
+      return state.filter((data, index) => {
+        return index != action.payload;
+      });
+    default:
+      return state;
+  }
+}
+
+export { reducer1, reducer2, newsStore,loading, Array };

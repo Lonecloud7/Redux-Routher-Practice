@@ -73,3 +73,23 @@ export const searchNews = (keyword) => {
 
   
 };
+
+export const addValue = (value) => {
+
+  return (dispatch) => {
+    dispatch({
+      type:"insert",
+      payload:value,
+    })
+  }
+}
+
+export const deleteValue = (id) => {
+
+  return (dispatch) => {
+    dispatch({
+      type:"delete",
+      payload:id,
+    })
+  }
+}
